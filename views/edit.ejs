@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes Maker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="main h-[100vh] w-full bg-zinc-700 px-[2vw] py-[2vw]">
+      <form action="/update/<%= filename %>" method="post">
+        <input
+          class="block text-gray-300 px-4 py-2 rounded-md w-full outline-none bg-zinc-500 mt-2"
+          type="text"
+          disabled
+          placeholder="Enter your Title"
+          name="title"
+          value="<%= filename %>"
+        />
+        <textarea
+          class="block text-white px-4 overflow-hidden py-2 w-full rounded-md outline-none resize-none bg-zinc-500 mt-2"
+          placeholder="Enter your Description"
+          name="description"
+        >
+<%= fileData %>
+    </textarea
+        >
+        <input
+          class="mt-2 bg-yellow-600 px-8 text-xl rounded-md text-white py-2"
+          type="submit"
+          value="Update"
+        />
+      </form>
+    </div>
+  </body>
+</html>
